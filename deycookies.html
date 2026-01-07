@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeyCookies - Cookies Homemade Lezat & Berkualitas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff7eb9;
+            --primary-dark: #ff5c9d;
+            --secondary-color: #ffe6f2;
+            --light-color: #fffafd;
+            --dark-color: #8a446c;
+            --text-color: #5a2d4a;
+            --accent-color: #ff9ec8;
+            --success-color: #8ce99a;
+            --shadow: 0 4px 15px rgba(255, 126, 185, 0.15);
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: white;
+            background-color: var(--primary-color);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 1.3rem;
+        }
+
+        .nav-icons a {
+            color: var(--dark-color);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        .cart-count, .notification-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-icon, .notification-icon {
+            position: relative;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 126, 185, 0.1), rgba(255, 126, 185, 0.1)), url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
+            border-radius: 0 0 var(--radius) var(--radius);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(255, 126, 185, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 92, 157, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Produk Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .products {
+            padding: 80px 0;
+        }
+
+        .product-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid var(--primary-color);
+            background-color: transparent;
+            border-radius: 30px;
+            color: var(--primary-color);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 126, 185, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .product-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .product-desc {
+            color: #8a5a7a;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .add-to-cart {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+            border-radius: var(--radius);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .feature i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .about-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Testimoni Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .testimonial-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            scrollbar-width: thin;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .testimonial-container::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .testimonial-card {
+            flex: 0 0 350px;
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            border: 2px solid white;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #5a2d4a;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            padding: 2px;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #8a5a7a;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-top: 5px;
+        }
+
+        /* Form Tambah Testimoni */
+        .add-testimonial-form {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 10px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .star-rating .star {
+            color: #ddd;
+            transition: var(--transition);
+        }
+
+        .star-rating .star.active, .star-rating .star.hovered {
+            color: #ffc107;
+        }
+
+        /* Live Chat */
+        .live-chat-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chat-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(255, 126, 185, 0.5);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-btn:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 380px;
+            height: 550px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(255, 126, 185, 0.3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 2px solid var(--primary-color);
+        }
+
+        .chat-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            padding: 12px 16px;
+            border-radius: 20px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .incoming {
+            background-color: var(--secondary-color);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .outgoing {
+            background-color: var(--primary-color);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chat-quick-links {
+            padding: 15px;
+            border-top: 1px solid var(--secondary-color);
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .quick-link {
+            display: block;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .quick-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .quick-link i {
+            margin-right: 8px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 30px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .chat-input input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .chat-input button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .chat-input button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 25px rgba(255, 126, 185, 0.2);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-modal.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid var(--secondary-color);
+            background-color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .quantity-btn:hover {
+            border-color: var(--primary-color);
+            background-color: var(--secondary-color);
+        }
+
+        .cart-item-quantity {
+            font-weight: 700;
+            min-width: 25px;
+            text-align: center;
+        }
+
+        .remove-item {
+            color: #ff6b6b;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .remove-item:hover {
+            color: #ff3b3b;
+        }
+
+        .cart-total {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .cart-actions {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Payment Modal */
+        .payment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .payment-modal.open {
+            display: flex;
+        }
+
+        .payment-content {
+            background-color: white;
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        .payment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .payment-method:hover, .payment-method.selected {
+            border-color: var(--primary-color);
+            background-color: var(--secondary-color);
+        }
+
+        .payment-method-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .payment-method-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .payment-method-info p {
+            font-size: 0.9rem;
+            color: #8a5a7a;
+        }
+
+        .payment-details {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .payment-summary {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .payment-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding-top: 15px;
+            margin-top: 15px;
+            border-top: 2px solid white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-col p {
+            color: #e6b3d3;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 45px;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #e6b3d3;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e6b3d3;
+            font-size: 0.9rem;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background-color: var(--success-color);
+            color: var(--text-color);
+            padding: 15px 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideIn 0.3s ease;
+        }
+
+        .notification.error {
+            background-color: #ffa8a8;
+        }
+
+        /* Empty States */
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+            color: #8a5a7a;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .chat-window {
+                width: 350px;
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(255, 126, 185, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .testimonial-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .chat-window {
+                width: 320px;
+                height: 450px;
+                right: 10px;
+            }
+            
+            .cart-modal {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .payment-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 70px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .testimonial-card {
+                flex: 0 0 300px;
+            }
+            
+            .chat-window {
+                width: 300px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-img">
+                        <i class="fas fa-user-chef"></i>
+                    </div>
+                    DeyCookies
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Beranda</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" id="userIcon"><i class="fas fa-user"></i></a>
+                    <a href="#" class="notification-icon" id="notificationIcon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count" id="notificationCount">0</span>
+                    </a>
+                    <a href="#" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>DeyCookies: Cookies Homemade Lezat & Berkualitas</h1>
+            <p>Setiap gigitan adalah perjalanan rasa yang memikat. Cookies homemade dengan bahan premium dan dibuat penuh cinta.</p>
+            <a href="#products" class="btn">Belanja Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Produk Unggulan Kami</h2>
+            
+            <div class="product-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="classic">Klasik</button>
+                <button class="filter-btn" data-filter="chocolate">Cokelat</button>
+                <button class="filter-btn" data-filter="premium">Premium</button>
+                <button class="filter-btn" data-filter="vegan">Vegan</button>
+            </div>
+            
+            <div class="product-grid" id="productGrid">
+                <!-- Produk akan diisi via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang DeyCookies</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Halo! Bayangin aja, setiap pagi di dapur kecil kami di Depok, aroma mentega meleleh dan cokelat hangat langsung bikin semua orang lapar. DeyCookies lahir tahun 2020 dari resep rahasia ibu saya yang udah turun-temurun—dibuat handmade segar setiap hari pakai bahan terbaik: tepung organik, mentega impor asli, cokelat Belgia yang meleleh sempurna, dan rempah alami tanpa tambahan aneh-aneh.</p>
+                    
+                    <p>Yang bikin cookies kami beda? Rasanya beneran 'homey'—renyah luar, chewy dalam, kayak peluk hangat di hari hujan. Coba deh Cookies Cokelat Chunk favorit kami, Red Velvet yang creamy, atau Matcha yang unik buat yang suka eksperimental. Semua halal certified, kemasan ramah lingkungan, dan kami dukung petani lokal biar manisnya berkelanjutan.</p>
+                    
+                    <p>Cookies ini bukan cuma ngemil, tapi buat nemenin kopi pagi, bagi-bagi hadiah, atau sekadar treat diri sendiri. Sekali coba, pasti balik lagi. Yuk, ceritain rasa favoritmu!</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Bahan Organik</h4>
+                                <p>Menggunakan bahan alami tanpa pengawet</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Dibuat dengan Cinta</h4>
+                                <p>Handmade dengan perhatian penuh</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Kualitas Premium</h4>
+                                <p>Cokelat Belgia & mentega impor terbaik</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-recycle"></i>
+                            <div>
+                                <h4>Ramah Lingkungan</h4>
+                                <p>Kemasan biodegradable & recyclable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Proses pembuatan cookies DeyCookies">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonial-header">
+                <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+                <button class="btn btn-secondary" id="addTestimonialBtn">
+                    <i class="fas fa-plus"></i> Tambah Testimoni
+                </button>
+            </div>
+            
+            <div class="testimonial-container" id="testimonialContainer">
+                <!-- Testimoni akan diisi via JavaScript -->
+            </div>
+            
+            <!-- Form Tambah Testimoni (Awalnya Tersembunyi) -->
+            <div class="add-testimonial-form" id="addTestimonialForm" style="display: none;">
+                <h3 style="margin-bottom: 20px; color: var(--dark-color);">Bagikan Pengalaman Anda</h3>
+                <form id="testimonialForm">
+                    <div class="form-group">
+                        <label for="testimonialName">Nama Anda *</label>
+                        <input type="text" id="testimonialName" class="form-control" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating *</label>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-value="1"><i class="far fa-star"></i></span>
+                            <span class="star" data-value="2"><i class="far fa-star"></i></span>
+                            <span class="star" data-value="3"><i class="far fa-star"></i></span>
+                            <span class="star" data-value="4"><i class="far fa-star"></i></span>
+                            <span class="star" data-value="5"><i class="far fa-star"></i></span>
+                        </div>
+                        <input type="hidden" id="testimonialRating" value="0" required>
+                        <small id="ratingError" style="color: #ff6b6b; display: none;">Pilih rating terlebih dahulu</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="testimonialText">Testimoni Anda *</label>
+                        <textarea id="testimonialText" class="form-control" placeholder="Ceritakan pengalaman Anda dengan DeyCookies..." required></textarea>
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Kirim Testimoni
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelTestimonialBtn">
+                            <i class="fas fa-times"></i> Batal
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Chat -->
+    <div class="live-chat-container">
+        <button class="chat-btn" id="chatBtn">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>DeyCookies Assistant</h3>
+                <button class="close-chat" id="closeChat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message incoming">
+                    Halo! Saya DeyCookies Assistant 🤖
+                </div>
+                <div class="message incoming">
+                    Ada yang bisa saya bantu? Anda bisa menanyakan tentang produk, harga, pengiriman, atau pemesanan.
+                </div>
+                <div class="message incoming">
+                    <strong>Coba ketik kata kunci:</strong><br>
+                    • "produk" - lihat semua produk<br>
+                    • "harga" - info harga & promo<br>
+                    • "pengiriman" - info ongkir & waktu<br>
+                    • "pemesanan" - cara pesan<br>
+                    • "kontak" - kontak kami<br>
+                    • "testimoni" - lihat testimoni
+                </div>
+            </div>
+            
+            <div class="chat-quick-links">
+                <a href="https://wa.me/6289690272916" target="_blank" class="quick-link">
+                    <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+                </a>
+                <a href="tel:+6289690272916" class="quick-link">
+                    <i class="fas fa-phone"></i> Telepon +62 896-9027-2916
+                </a>
+                <a href="#products" class="quick-link" id="viewProductsLink">
+                    <i class="fas fa-cookie-bite"></i> Lihat Produk
+                </a>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ketik pesan Anda...">
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Keranjang Belanja</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Item keranjang akan diisi via JavaScript -->
+        </div>
+        
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">Rp 0</span>
+        </div>
+        
+        <div class="cart-actions">
+            <button class="btn" id="checkoutBtn">
+                <i class="fas fa-credit-card"></i> Lanjutkan Pembayaran
+            </button>
+            <button class="btn btn-secondary" id="continueShoppingBtn">
+                <i class="fas fa-shopping-bag"></i> Lanjut Belanja
+            </button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content">
+            <div class="payment-header">
+                <h3>Pembayaran</h3>
+                <button class="close-cart" id="closePayment">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="payment-details">
+                <div class="payment-summary">
+                    <span>Subtotal:</span>
+                    <span id="paymentSubtotal">Rp 0</span>
+                </div>
+                <div class="payment-summary">
+                    <span>Ongkos Kirim:</span>
+                    <span id="paymentShipping">Rp 15.000</span>
+                </div>
+                <div class="payment-total">
+                    <span>Total Pembayaran:</span>
+                    <span id="paymentTotal">Rp 15.000</span>
+                </div>
+            </div>
+            
+            <h4 style="margin-bottom: 15px;">Pilih Metode Pembayaran</h4>
+            <div class="payment-methods" id="paymentMethods">
+                <div class="payment-method" data-method="bank">
+                    <div class="payment-method-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="payment-method-info">
+                        <h4>Transfer Bank</h4>
+                        <p>BCA, Mandiri, BNI, BRI</p>
+                    </div>
+                </div>
+                
+                <div class="payment-method" data-method="ewallet">
+                    <div class="payment-method-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="payment-method-info">
+                        <h4>E-Wallet</h4>
+                        <p>Gopay, OVO, Dana, ShopeePay</p>
+                    </div>
+                </div>
+                
+                <div class="payment-method" data-method="cod">
+                    <div class="payment-method-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="payment-method-info">
+                        <h4>Bayar di Tempat (COD)</h4>
+                        <p>Bayar ketika barang sampai</p>
+                    </div>
+                </div>
+                
+                <div class="payment-method" data-method="whatsapp">
+                    <div class="payment-method-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="payment-method-info">
+                        <h4>Via WhatsApp</h4>
+                        <p>Konfirmasi pembayaran via WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <button class="btn" id="confirmPaymentBtn">
+                    <i class="fas fa-check-circle"></i> Konfirmasi Pembayaran
+                </button>
+                <button class="btn btn-secondary" id="cancelPaymentBtn">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>DeyCookies</h3>
+                    <p>Cookies homemade dengan cita rasa terbaik. Setiap gigitan adalah kebahagiaan!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/6289690272916" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-home"></i> Beranda</a></li>
+                        <li><a href="#products"><i class="fas fa-cookie-bite"></i> Produk</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-star"></i> Testimoni</a></li>
+                        <li><a href="#contact"><i class="fas fa-phone"></i> Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Kontak Kami</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.google.com" target="_blank"><i class="fas fa-map-marker-alt"></i> Dapur DeyCookies, Depok</a></li>
+                        <li><a href="tel:+6289690272916"><i class="fas fa-phone"></i> +62 896-9027-2916</a></li>
+                        <li><a href="mailto:order@deycookies.com"><i class="fas fa-envelope"></i> order@deycookies.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Buka setiap hari 08:00 - 20:00</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 DeyCookies. Semua hak dilindungi. | Dibuat dengan <i class="fas fa-heart" style="color: var(--primary-color);"></i> dan cookies lezat!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data produk
+        const products = [
+            {
+                id: 1,
+                name: "Choco Chip Cookies",
+                description: "Cookies dengan potongan cokelat Belgia premium yang lumer di mulut.",
+                price: 35000,
+                category: "chocolate",
+                image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 2,
+                name: "Red Velvet Cookies",
+                description: "Cookies lembut dengan rasa red velvet dan cream cheese filling premium.",
+                price: 45000,
+                category: "premium",
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 3,
+                name: "Oatmeal Raisin Cookies",
+                description: "Cookies sehat dengan oatmeal organik dan kismis, cocok untuk sarapan.",
+                price: 30000,
+                category: "classic",
+                image: "https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 5,
+                name: "Peanut Butter Cookies",
+                description: "Cookies dengan selai kacang asli, gurih dan manis yang pas.",
+                price: 32000,
+                category: "classic",
+                image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 6,
+                name: "Double Chocolate Cookies",
+                description: "Cookies dengan cokelat ganda Belgia, sangat cocok untuk pecinta cokelat.",
+                price: 38000,
+                category: "chocolate",
+                image: "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 7,
+                name: "Almond Vegan Cookies",
+                description: "Cookies vegan dengan almond dan madu organik, bebas susu dan telur.",
+                price: 42000,
+                category: "vegan",
+                image: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        // Data testimoni awal
+        let testimonials = [
+            {
+                id: 1,
+                name: "Rina Wijaya",
+                text: "Cookiesnya enak banget! Teksturnya pas, tidak terlalu keras tidak terlalu lembut. Anak-anak saya suka sekali!",
+                rating: 5,
+                image: "https://randomuser.me/api/portraits/women/32.jpg",
+                date: "2023-10-15"
+            },
+            {
+                id: 2,
+                name: "Budi Santoso",
+                text: "Pengiriman cepat, packaging rapi. Cookies red velvet favorit saya, cream cheesenya pas tidak terlalu manis.",
+                rating: 5,
+                image: "https://randomuser.me/api/portraits/men/54.jpg",
+                date: "2023-10-10"
+            },
+            {
+                id: 3,
+                name: "Sari Dewi",
+                text: "Sebagai vegan, saya senang ada pilihan cookies vegan yang enak. Almond vegan cookiesnya recommended!",
+                rating: 4,
+                image: "https://randomuser.me/api/portraits/women/65.jpg",
+                date: "2023-10-05"
+            },
+            {
+                id: 4,
+                name: "Andi Pratama",
+                text: "Double chocolate cookiesnya benar-benar double! Cokelatnya lumer di mulut. Bakal pesan lagi pasti.",
+                rating: 5,
+                image: "https://randomuser.me/api/portraits/men/76.jpg",
+                date: "2023-09-28"
+            },
+            {
+                id: 5,
+                name: "Maya Sari",
+                text: "Matcha cookiesnya authentic banget rasanya. Seperti minum matcha latte tapi dalam bentuk cookies.",
+                rating: 5,
+                image: "https://randomuser.me/api/portraits/women/44.jpg",
+                date: "2023-09-20"
+            }
+        ];
+
+        // Data keranjang belanja
+        let cart = [];
+        let notifications = [];
+
+        // Fungsi untuk menampilkan produk
+        function displayProducts(filter = 'all') {
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = '';
+            
+            const filteredProducts = filter === 'all' 
+                ? products 
+                : products.filter(product => product.category === filter);
+            
+            if (filteredProducts.length === 0) {
+                productGrid.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <i class="fas fa-cookie-bite"></i>
+                        <h3>Tidak ada produk dalam kategori ini</h3>
+                        <p>Coba kategori lainnya</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.dataset.category = product.category;
+                
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-desc">${product.description}</p>
+                        <div class="product-price">
+                            <div class="price">Rp ${product.price.toLocaleString('id-ID')}</div>
+                            <button class="add-to-cart" data-id="${product.id}">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                productGrid.appendChild(productCard);
+            });
+            
+            // Tambahkan event listener untuk tombol add to cart
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    addToCart(productId);
+                });
+            });
+        }
+
+        // Fungsi untuk menampilkan testimoni
+        function displayTestimonials() {
+            const testimonialContainer = document.getElementById('testimonialContainer');
+            testimonialContainer.innerHTML = '';
+            
+            // Urutkan testimoni berdasarkan tanggal (terbaru pertama)
+            const sortedTestimonials = [...testimonials].sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            sortedTestimonials.forEach(testimonial => {
+                const testimonialCard = document.createElement('div');
+                testimonialCard.className = 'testimonial-card';
+                
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    if (i < testimonial.rating) {
+                        stars += '<i class="fas fa-star"></i>';
+                    } else {
+                        stars += '<i class="far fa-star"></i>';
+                    }
+                }
+                
+                const date = new Date(testimonial.date).toLocaleDateString('id-ID', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                
+                testimonialCard.innerHTML = `
+                    <p class="testimonial-text">"${testimonial.text}"</p>
+                    <div class="testimonial-author">
+                        <img src="${testimonial.image}" alt="${testimonial.name}" class="author-img">
+                        <div class="author-info">
+                            <h4>${testimonial.name}</h4>
+                            <div class="rating">${stars}</div>
+                            <p style="font-size: 0.8rem; color: #aaa;">${date}</p>
+                        </div>
+                    </div>
+                `;
+                
+                testimonialContainer.appendChild(testimonialCard);
+            });
+        }
+
+        // Fungsi untuk menambahkan produk ke keranjang
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            showNotification(`${product.name} ditambahkan ke keranjang`);
+            
+            // Tambahkan notifikasi
+            addNotification(`Produk "${product.name}" berhasil ditambahkan ke keranjang`);
+        }
+
+        // Fungsi untuk memperbarui jumlah item di keranjang
+        function updateCartCount() {
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Fungsi untuk menampilkan keranjang
+        function displayCart() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Keranjang belanja kosong</h3>
+                        <p>Tambahkan produk ke keranjang Anda</p>
+                    </div>
+                `;
+                cartTotal.textContent = 'Rp 0';
+                return;
+            }
+            
+            cartItems.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">Rp ${item.price.toLocaleString('id-ID')}</div>
+                        <div class="cart-item-actions">
+                            <button class="quantity-btn decrease" data-id="${item.id}">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="cart-item-quantity">${item.quantity}</span>
+                            <button class="quantity-btn increase" data-id="${item.id}">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="remove-item" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+            
+            // Tambahkan event listener untuk tombol di keranjang
+            document.querySelectorAll('.decrease').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    updateCartItemQuantity(productId, -1);
+                });
+            });
+            
+            document.querySelectorAll('.increase').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    updateCartItemQuantity(productId, 1);
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    removeCartItem(productId);
+                });
+            });
+        }
+
+        // Fungsi untuk memperbarui jumlah item di keranjang
+        function updateCartItemQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            
+            if (item) {
+                item.quantity += change;
+                
+                if (item.quantity <= 0) {
+                    cart = cart.filter(item => item.id !== productId);
+                    addNotification(`Produk "${item.name}" dihapus dari keranjang`);
+                } else {
+                    addNotification(`Jumlah "${item.name}" diubah menjadi ${item.quantity}`);
+                }
+                
+                updateCartCount();
+                displayCart();
+            }
+        }
+
+        // Fungsi untuk menghapus item dari keranjang
+        function removeCartItem(productId) {
+            const item = cart.find(item => item.id === productId);
+            cart = cart.filter(item => item.id !== productId);
+            updateCartCount();
+            displayCart();
+            showNotification(`${item.name} dihapus dari keranjang`);
+            addNotification(`Produk "${item.name}" dihapus dari keranjang`);
+        }
+
+        // Fungsi untuk menampilkan notifikasi
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Fungsi untuk menambahkan notifikasi
+        function addNotification(message) {
+            notifications.push({
+                id: Date.now(),
+                message: message,
+                read: false,
+                date: new Date().toISOString()
+            });
+            
+            updateNotificationCount();
+        }
+
+        // Fungsi untuk memperbarui jumlah notifikasi
+        function updateNotificationCount() {
+            const notificationCount = document.getElementById('notificationCount');
+            const unreadCount = notifications.filter(n => !n.read).length;
+            notificationCount.textContent = unreadCount;
+            
+            if (unreadCount > 0) {
+                notificationCount.style.display = 'flex';
+            } else {
+                notificationCount.style.display = 'none';
+            }
+        }
+
+        // Fungsi untuk live chat dengan bot sederhana
+        function setupLiveChat() {
+            const chatBtn = document.getElementById('chatBtn');
+            const chatWindow = document.getElementById('chatWindow');
+            const closeChat = document.getElementById('closeChat');
+            const sendMessageBtn = document.getElementById('sendMessage');
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+            const viewProductsLink = document.getElementById('viewProductsLink');
+            
+            chatBtn.addEventListener('click', () => {
+                chatWindow.style.display = 'flex';
+            });
+            
+            closeChat.addEventListener('click', () => {
+                chatWindow.style.display = 'none';
+            });
+            
+            sendMessageBtn.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            viewProductsLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                chatWindow.style.display = 'none';
+                document.querySelector('a[href="#products"]').click();
+                setTimeout(() => {
+                    window.scrollBy(0, -80);
+                }, 100);
+            });
+            
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    // Tambahkan pesan pengguna
+                    const userMessageDiv = document.createElement('div');
+                    userMessageDiv.className = 'message outgoing';
+                    userMessageDiv.textContent = message;
+                    chatMessages.appendChild(userMessageDiv);
+                    
+                    // Kosongkan input
+                    chatInput.value = '';
+                    
+                    // Respons bot berdasarkan kata kunci
+                    setTimeout(() => {
+                        const botResponse = generateBotResponse(message.toLowerCase());
+                        const botMessageDiv = document.createElement('div');
+                        botMessageDiv.className = 'message incoming';
+                        botMessageDiv.innerHTML = botResponse;
+                        chatMessages.appendChild(botMessageDiv);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }, 800);
+                    
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+            }
+            
+            function generateBotResponse(message) {
+                // Kata kunci dan respons
+                const responses = {
+                    'produk': 'Kami punya berbagai cookies lezat! <br><br>🍫 <strong>Chocolate Series:</strong> Choco Chip, Double Chocolate<br>🌸 <strong>Premium Series:</strong> Red Velvet, Matcha Premium<br>🌾 <strong>Classic Series:</strong> Oatmeal Raisin, Peanut Butter, Shortbread<br>🌱 <strong>Vegan Series:</strong> Almond Vegan<br><br>Scroll ke atas atau klik <a href="#products" style="color: var(--primary-color); font-weight: bold;">Lihat Produk</a> untuk detailnya!',
+                    'harga': '💰 <strong>Info Harga DeyCookies:</strong><br><br>• Cookies Classic: Rp 28.000 - Rp 32.000<br>• Cookies Chocolate: Rp 35.000 - Rp 38.000<br>• Cookies Premium: Rp 40.000 - Rp 45.000<br>• Cookies Vegan: Rp 42.000<br><br>🛍️ <strong>Promo Bulan Ini:</strong> Beli 5 gratis 1 untuk semua varian!',
+                    'pengiriman': '🚚 <strong>Info Pengiriman:</strong><br><br>• Ongkir Jabodetabek: Rp 15.000<br>• Luar Jabodetabek: Rp 25.000 - Rp 35.000<br>• Waktu pengiriman: 1-2 hari kerja<br>• Gratis ongkir min. pembelian Rp 150.000<br><br>📦 Packing aman & rapi dengan bahan ramah lingkungan!',
+                    'pemesanan': '🛒 <strong>Cara Pemesanan:</strong><br><br>1. Pilih produk di website ini<br>2. Tambah ke keranjang<br>3. Klik ikon keranjang untuk checkout<br>4. Pilih metode pembayaran<br>5. Konfirmasi pesanan<br><br>Atau langsung WhatsApp ke <a href="https://wa.me/6289690272916" style="color: var(--primary-color); font-weight: bold;">+62 896-9027-2916</a>',
+                    'kontak': '📞 <strong>Kontak DeyCookies:</strong><br><br>• WhatsApp: <a href="https://wa.me/6289690272916" style="color: var(--primary-color); font-weight: bold;">+62 896-9027-2916</a><br>• Telepon: +62 896-9027-2916<br>• Email: order@deycookies.com<br>• Lokasi: Dapur DeyCookies, Depok<br>• Jam Operasional: 08:00 - 20:00 setiap hari',
+                    'testimoni': '⭐ <strong>Testimoni Pelanggan:</strong><br><br>"Cookiesnya enak banget! Anak-anak saya suka sekali!" - Rina<br>"Pengiriman cepat, packaging rapi." - Budi<br>"Almond vegan cookiesnya recommended!" - Sari<br><br>Baca lebih banyak di <a href="#testimonials" style="color: var(--primary-color); font-weight: bold;">bagian Testimoni</a> atau tambahkan testimoni Anda sendiri!',
+                    'halo': 'Halo! 👋 Ada yang bisa saya bantu? Coba ketik: <strong>produk, harga, pengiriman, pemesanan, kontak, atau testimoni</strong>',
+                    'hai': 'Hai! 😊 Ada yang bisa saya bantu? Coba ketik: <strong>produk, harga, pengiriman, pemesanan, kontak, atau testimoni</strong>',
+                    'terima kasih': 'Sama-sama! 😊 Semoga cookies DeyCookies bikin hari kamu lebih manis! Jangan lupa coba varian favorit kami ya!',
+                    'makasih': 'Sama-sama! 😊 Kalau ada pertanyaan lagi, tinggal tanya ya!',
+                };
+                
+                // Cek kata kunci
+                for (const [keyword, response] of Object.entries(responses)) {
+                    if (message.includes(keyword)) {
+                        return response;
+                    }
+                }
+                
+                // Respons default jika tidak ada kata kunci yang cocok
+                const defaultResponses = [
+                    "Maaf, saya tidak mengerti pertanyaan Anda. Coba tanyakan tentang: <strong>produk, harga, pengiriman, pemesanan, kontak, atau testimoni</strong>",
+                    "Saya DeyCookies Assistant! 🤖 Coba ketik kata kunci seperti: <strong>produk, harga, pengiriman</strong> untuk info lebih detail.",
+                    "Untuk pertanyaan spesifik, langsung hubungi WhatsApp kami di <a href='https://wa.me/6289690272916' style='color: var(--primary-color); font-weight: bold;'>+62 896-9027-2916</a> ya!",
+                    "Cookies DeyCookies dibuat dengan bahan premium dan cinta! 🍪💖 Coba tanyakan tentang <strong>produk</strong> atau <strong>harga</strong>!"
+                ];
+                
+                return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+            }
+        }
+
+        // Fungsi untuk filter produk
+        function setupProductFilter() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Hapus class active dari semua tombol
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Tambah class active ke tombol yang diklik
+                    this.classList.add('active');
+                    
+                    // Filter produk
+                    const filter = this.dataset.filter;
+                    displayProducts(filter);
+                });
+            });
+        }
+
+        // Fungsi untuk mobile menu
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Tutup mobile menu ketika link diklik
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    // Update active link
+                    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+        }
+
+        // Fungsi untuk keranjang modal
+        function setupCartModal() {
+            const cartIcon = document.getElementById('cartIcon');
+            const cartModal = document.getElementById('cartModal');
+            const closeCart = document.getElementById('closeCart');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const continueShoppingBtn = document.getElementById('continueShoppingBtn');
+            
+            cartIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                cartModal.classList.add('open');
+                displayCart();
+            });
+            
+            closeCart.addEventListener('click', () => {
+                cartModal.classList.remove('open');
+            });
+            
+            checkoutBtn.addEventListener('click', () => {
+                if (cart.length === 0) {
+                    showNotification('Keranjang belanja kosong', 'error');
+                    return;
+                }
+                
+                cartModal.classList.remove('open');
+                openPaymentModal();
+            });
+            
+            continueShoppingBtn.addEventListener('click', () => {
+                cartModal.classList.remove('open');
+            });
+            
+            // Tutup modal ketika klik di luar
+            window.addEventListener('click', (e) => {
+                if (e.target === cartModal) {
+                    cartModal.classList.remove('open');
+                }
+            });
+        }
+
+        // Fungsi untuk modal pembayaran
+        function setupPaymentModal() {
+            const paymentModal = document.getElementById('paymentModal');
+            const closePayment = document.getElementById('closePayment');
+            const cancelPaymentBtn = document.getElementById('cancelPaymentBtn');
+            const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            
+            let selectedPaymentMethod = '';
+            
+            // Pilih metode pembayaran
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', function() {
+                    paymentMethods.forEach(m => m.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedPaymentMethod = this.dataset.method;
+                });
+            });
+            
+            closePayment.addEventListener('click', closePaymentModal);
+            cancelPaymentBtn.addEventListener('click', closePaymentModal);
+            
+            confirmPaymentBtn.addEventListener('click', () => {
+                if (!selectedPaymentMethod) {
+                    showNotification('Pilih metode pembayaran terlebih dahulu', 'error');
+                    return;
+                }
+                
+                // Proses pembayaran
+                processPayment(selectedPaymentMethod);
+            });
+            
+            function closePaymentModal() {
+                paymentModal.classList.remove('open');
+            }
+            
+            function openPaymentModal() {
+                // Hitung total pembayaran
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                const shipping = 15000;
+                const total = subtotal + shipping;
+                
+                document.getElementById('paymentSubtotal').textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+                document.getElementById('paymentShipping').textContent = `Rp ${shipping.toLocaleString('id-ID')}`;
+                document.getElementById('paymentTotal').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+                
+                // Reset pilihan metode pembayaran
+                paymentMethods.forEach(m => m.classList.remove('selected'));
+                selectedPaymentMethod = '';
+                
+                paymentModal.classList.add('open');
+            }
+            
+            function processPayment(method) {
+                // Simulasi proses pembayaran
+                showNotification('Memproses pembayaran...');
+                
+                setTimeout(() => {
+                    closePaymentModal();
+                    
+                    if (method === 'whatsapp') {
+                        // Redirect ke WhatsApp
+                        const total = cart.reduce((total, item) => total + (item.price * item.quantity), 0) + 15000;
+                        const productList = cart.map(item => 
+                            `• ${item.name} (${item.quantity}x) = Rp ${(item.price * item.quantity).toLocaleString('id-ID')}`
+                        ).join('%0A');
+                        
+                        const message = `Halo DeyCookies! Saya ingin memesan:%0A%0A${productList}%0A%0ATotal: Rp ${total.toLocaleString('id-ID')}%0A%0ANama: [isi nama Anda]%0AAlamat: [isi alamat lengkap]%0ATelepon: [isi nomor telepon]`;
+                        window.open(`https://wa.me/6289690272916?text=${message}`, '_blank');
+                    }
+                    
+                    // Kosongkan keranjang
+                    cart = [];
+                    updateCartCount();
+                    
+                    // Tampilkan notifikasi sukses
+                    showNotification('Pembayaran berhasil! Pesanan Anda sedang diproses.');
+                    addNotification('Pembayaran berhasil. Pesanan Anda sedang diproses.');
+                    
+                    // Reset metode pembayaran
+                    selectedPaymentMethod = '';
+                }, 1500);
+            }
+            
+            window.openPaymentModal = openPaymentModal;
+        }
+
+        // Fungsi untuk testimoni dengan rating bintang yang FIXED
+        function setupTestimonials() {
+            const addTestimonialBtn = document.getElementById('addTestimonialBtn');
+            const addTestimonialForm = document.getElementById('addTestimonialForm');
+            const cancelTestimonialBtn = document.getElementById('cancelTestimonialBtn');
+            const testimonialForm = document.getElementById('testimonialForm');
+            const starRating = document.getElementById('starRating');
+            const testimonialRating = document.getElementById('testimonialRating');
+            const ratingError = document.getElementById('ratingError');
+            
+            // Tampilkan/sembunyikan form testimoni
+            addTestimonialBtn.addEventListener('click', () => {
+                addTestimonialForm.style.display = 'block';
+                addTestimonialBtn.style.display = 'none';
+                window.scrollBy(0, 100);
+            });
+            
+            cancelTestimonialBtn.addEventListener('click', () => {
+                addTestimonialForm.style.display = 'none';
+                addTestimonialBtn.style.display = 'block';
+                testimonialForm.reset();
+                testimonialRating.value = '0';
+                resetStarRating();
+                ratingError.style.display = 'none';
+            });
+            
+            // Sistem rating bintang yang FIXED
+            let currentRating = 0;
+            let hoverRating = 0;
+            
+            const stars = starRating.querySelectorAll('.star');
+            
+            // Fungsi untuk update tampilan bintang
+            function updateStarDisplay() {
+                stars.forEach((star, index) => {
+                    const starValue = index + 1;
+                    const starIcon = star.querySelector('i');
+                    
+                    if (hoverRating >= starValue) {
+                        starIcon.className = 'fas fa-star';
+                        star.classList.add('hovered');
+                    } else if (currentRating >= starValue) {
+                        starIcon.className = 'fas fa-star';
+                        star.classList.add('active');
+                        star.classList.remove('hovered');
+                    } else {
+                        starIcon.className = 'far fa-star';
+                        star.classList.remove('active', 'hovered');
+                    }
+                });
+            }
+            
+            // Event listeners untuk bintang
+            stars.forEach((star, index) => {
+                const starValue = index + 1;
+                
+                star.addEventListener('click', () => {
+                    currentRating = starValue;
+                    testimonialRating.value = currentRating;
+                    updateStarDisplay();
+                    ratingError.style.display = 'none';
+                });
+                
+                star.addEventListener('mouseover', () => {
+                    hoverRating = starValue;
+                    updateStarDisplay();
+                });
+                
+                star.addEventListener('mouseout', () => {
+                    hoverRating = 0;
+                    updateStarDisplay();
+                });
+            });
+            
+            function resetStarRating() {
+                currentRating = 0;
+                hoverRating = 0;
+                testimonialRating.value = '0';
+                updateStarDisplay();
+            }
+            
+            // Submit form testimoni
+            testimonialForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('testimonialName').value.trim();
+                const text = document.getElementById('testimonialText').value.trim();
+                const rating = parseInt(testimonialRating.value);
+                
+                // Validasi
+                if (!name || !text) {
+                    showNotification('Harap isi semua field yang diperlukan', 'error');
+                    return;
+                }
+                
+                if (rating === 0) {
+                    ratingError.style.display = 'block';
+                    showNotification('Berikan rating terlebih dahulu', 'error');
+                    return;
+                }
+                
+                // Buat testimoni baru
+                const newTestimonial = {
+                    id: testimonials.length + 1,
+                    name: name,
+                    text: text,
+                    rating: rating,
+                    image: `https://randomuser.me/api/portraits/${Math.random() > 0.5 ? 'men' : 'women'}/${Math.floor(Math.random() * 99)}.jpg`,
+                    date: new Date().toISOString().split('T')[0]
+                };
+                
+                // Tambahkan ke array testimoni
+                testimonials.unshift(newTestimonial);
+                
+                // Tampilkan testimoni baru
+                displayTestimonials();
+                
+                // Reset form
+                testimonialForm.reset();
+                resetStarRating();
+                ratingError.style.display = 'none';
+                
+                // Sembunyikan form
+                addTestimonialForm.style.display = 'none';
+                addTestimonialBtn.style.display = 'block';
+                
+                // Tampilkan notifikasi
+                showNotification('Testimoni Anda berhasil dikirim! Terima kasih sudah berbagi pengalaman.');
+                addNotification('Testimoni baru telah ditambahkan');
+                
+                // Scroll ke testimoni
+                setTimeout(() => {
+                    document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            });
+        }
+
+        // Fungsi untuk notifikasi
+        function setupNotifications() {
+            const notificationIcon = document.getElementById('notificationIcon');
+            
+            notificationIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                if (notifications.length === 0) {
+                    showNotification('Tidak ada notifikasi baru', 'error');
+                    return;
+                }
+                
+                // Tampilkan semua notifikasi
+                let notificationText = "Notifikasi Terbaru:\n\n";
+                notifications.slice(0, 5).forEach((notif, index) => {
+                    const date = new Date(notif.date).toLocaleDateString('id-ID', { 
+                        day: 'numeric', 
+                        month: 'short', 
+                        year: 'numeric' 
+                    });
+                    notificationText += `${index + 1}. ${notif.message} (${date})\n`;
+                });
+                
+                if (notifications.length > 5) {
+                    notificationText += `\n...dan ${notifications.length - 5} notifikasi lainnya`;
+                }
+                
+                // Tampilkan dalam alert sederhana
+                alert(notificationText);
+                
+                // Tandai sebagai sudah dibaca
+                notifications.forEach(notif => notif.read = true);
+                updateNotificationCount();
+            });
+        }
+
+        // Fungsi untuk smooth scrolling
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Inisialisasi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tampilkan produk dan testimoni
+            displayProducts();
+            displayTestimonials();
+            
+            // Setup berbagai fungsi
+            setupProductFilter();
+            setupMobileMenu();
+            setupLiveChat();
+            setupCartModal();
+            setupPaymentModal();
+            setupTestimonials();
+            setupNotifications();
+            setupSmoothScrolling();
+            
+            // Update jumlah keranjang dan notifikasi
+            updateCartCount();
+            updateNotificationCount();
+            
+            // Tambahkan notifikasi selamat datang
+            setTimeout(() => {
+                addNotification('Selamat datang di DeyCookies! Cookies homemade lezat menanti Anda.');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
